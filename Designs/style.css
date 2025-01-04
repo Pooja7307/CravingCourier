@@ -1,0 +1,40 @@
+header{
+    background-color: rgb(221, 140, 33);
+    align-items: center;
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+
+nav {
+    background-color: rgb(221, 140, 33);
+    text-align: center; 
+     justify-content: space-between;
+    text-decoration: none; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h1{
+    font-family: cursive;
+}
+
+#icon{
+    height: 30px;
+    width: 30px;
+}
+
+a{
+    justify-content: space-between;
+    text-decoration: none;
+    color: beige;
+    text-align: center;
+   
+   
+}
+
+/* #bg{
+width: 100%;
+height: 100%;
+} */
+h1{
+    text-align: center;
+}

@@ -1,0 +1,103 @@
+/* #form2{
+    background-color: rgb(182, 11, 39);
+    width: 300px;
+   justify-self: center;
+    height: 500px;
+    
+  
+}
+div{
+    display: grid;
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    align-items: center;
+    justify-self: center;
+
+}
+ input{
+    align-items: center;
+    height: 30px;
+    border-radius: 10px;
+}
+select{
+    height: 15px;
+    width: 60px;
+    border: none;
+    margin-left: 75px;
+    margin-top: -15px;
+    background-color: rgb(182, 11, 39);
+}
+button{
+    margin-top: 20px;
+    height: 40px;
+    background-color: rgb(77, 25, 25);
+    color: beige;
+    border-radius: 10px;
+} */
+
+body {
+    font-family: Arial, sans-serif;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f2f2f2;
+  }
+  
+  .signup-container {
+    background-color: white;
+    padding: 20px 70px;
+    padding-left: 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    justify-self: center;
+    margin-top: 10px;
+    
+    
+  }
+  .signup-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  #icon{
+    height: 30px;
+    width: 30px;
+    
+  }
+  
+  .signup-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 ;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    
+  }
+  .signup-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(221, 140, 33);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+
+  }
+  .signup-container button:hover {
+    background-color:rgb(221, 140, 33);
+  }
+  .error, .success {
+    font-size: 14px;
+    text-align: center;
+  }
+  .error {
+    color: red;
+  }
+  .success {
+    color: green;
+  }

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Designs/style.css">
+    <link rel="stylesheet" href="./Designs/login.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>CravingCourier</h1>
+    </header>
+    <nav>
+      <a href="home.html">Home</a>
+        &nbsp&nbsp
+        <a href="signup.html">SignUp</a>
+        <!-- <a href="menu.html">Menu</a> -->
+        
+    </nav>
+
+    <div class="login-container">
+      <h2>Login<span><img id="icon" src="https://cdn-icons-png.flaticon.com/512/10342/10342492.png" alt=""></span></h2>
+      <form id="loginForm" onsubmit="login(event)">
+        <input type="email" id="email" placeholder="Enter your email address" required />
+        <input type="password" id="password" placeholder="Enter your password" required />
+        <button type="submit">Login</button>
+      </form>
+      <p class="error" id="errorMessage"></p>
+    </div>
+</body>
+<script src="./scripts/login.js"></script>
+
+</html>
