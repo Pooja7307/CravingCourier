@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -28,7 +28,7 @@
                 <img id="snack" src="./assets/snack3.jpeg" alt="">
                 </div>
     
-            <!-- Buttons -->
+           
             <button class="prev" onclick="changeSlide(-1)"></button>
             <button class="next" onclick="changeSlide(1)"></button>
         </div>
@@ -36,5 +36,66 @@
 
     <script src="./scripts/menu.js">
     </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+  <link rel="stylesheet" href="./Designs/menu.css">
+  <link rel="stylesheet" href="./Designs/style.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">CravingCourier</div>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section id="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-container">
+      <div class="card">
+        <img src="./assets/snack2.jpeg" alt="Tacos">
+        <h3>Chicken Taco</h3>
+        <p>Delicious Chicken Taco topped with fresh ingredients.</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="card">
+        <img src="./assets/snack3.jpeg" alt="Burrito">
+        <h3>Burger</h3>
+        <p>Juicy Chicken Burrito with lettuce, tomato, and cheese.</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="card">
+        <img src="./assets/snack1.jpeg" alt="Nuggets">
+        <h3>Nuggets</h3>
+        <p>Freshly made  Chicken Nuggets with premium ingredients.</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="card">
+        <img src="./assets/Browny.jpeg" alt="Dessert">
+        <h3>Desserts</h3>
+        <p>Indulgent desserts to satisfy your sweet tooth.</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Foodify. All Rights Reserved.</p>
+  </footer>
+
+  <script src="./scripts/menu.js"></script>
 </body>
 </html>

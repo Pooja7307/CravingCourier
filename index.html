@@ -1,11 +1,73 @@
-<!DOCTYPE html>
+
+ 
+  <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Delivery Website</title>
+  <link rel="stylesheet" href="./Designs/style.css">
+ 
+ 
 </head>
 <body>
-    
+  <header>
+    <div class="navbar">
+      <div class="logo">CravingCourier <span><img id="icon" src="https://cdn-icons-png.flaticon.com/512/10342/10342492.png" alt=""></span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#" onclick="openModal('login-modal')">Login</a></li>
+        <li><a href="#" onclick="openModal('signup-modal')">Sign Up</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section id="hero">
+    <div class="slideshow-container">
+      <div class="slide active-slide" style="background-image: url('./assets/snack1.jpeg');"></div>
+      <div class="slide" style="background-image: url('./assets/snack2.jpeg');"></div>
+      <div class="slide" style="background-image: url('./assets/snack3.jpeg');"></div>
+    </div>
+    <div class="hero-text">
+      <h1>Delicious Food Delivered To You</h1>
+      <p>Order your favorite meals anytime, anywhere.</p>
+      <button class="btn-primary">Order Now</button>
+    </div>
+  </section>
+
+  <section id="categories">
+    <h2>Explore Our Menu</h2>
+    <div class="categories-container">
+      <div class="category-item">Tacos</div>
+      <div class="category-item">Burgers</div>
+      <div class="category-item">Burritos</div>
+      <div class="category-item">Desserts</div>
+      <div class="category-item">Bevourages</div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>We are passionate about connecting people with their favorite meals and making food delivery a seamless experience.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 CravingCourier. All Rights Reserved.</p>
+  </footer>
 </body>
+<script src="./scripts/index.js"></script>
+<script src="./scripts/menu.js"></script>
 </html>
