@@ -6,23 +6,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Food Delivery Website</title>
-  <link rel="stylesheet" href="./Designs/style.css">
- 
- 
+  <link rel="stylesheet" href="./Designs/home.css">
+
 </head>
 <body>
   <header>
     <div class="navbar">
-      <div class="logo">CravingCourier <span><img id="icon" src="https://cdn-icons-png.flaticon.com/512/10342/10342492.png" alt=""></span></div>
+      <div><h1 id="logo">CravingCourier</h1></div>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="#categories">Menu</a></li>
         <li><a href="#about">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#contact">Contact</a></li>
         <li><a href="#" onclick="openModal('login-modal')">Login</a></li>
         <li><a href="#" onclick="openModal('signup-modal')">Sign Up</a></li>
       </ul>
     </div>
+  </ul>
+  <div class="search-bar">
+    <input type="text" placeholder="Search for food...">
+    <button class="search-btn">Search</button>
+  </div>
   </header>
 
   <section id="hero">
@@ -33,7 +37,7 @@
     </div>
     <div class="hero-text">
       <h1>Delicious Food Delivered To You</h1>
-      <p>Order your favorite meals anytime, anywhere.</p>
+      <h2><p>Order your favorite meals anytime, anywhere.</p></h2>
       <button class="btn-primary">Order Now</button>
     </div>
   </section>
@@ -42,8 +46,8 @@
     <h2>Explore Our Menu</h2>
     <div class="categories-container">
       <div class="category-item">Tacos</div>
-      <div class="category-item">Burgers</div>
       <div class="category-item">Burritos</div>
+      <div class="category-item">Burgers</div>
       <div class="category-item">Desserts</div>
       <div class="category-item">Bevourages</div>
     </div>
@@ -60,14 +64,127 @@
       <input type="text" placeholder="Your Name" required>
       <input type="email" placeholder="Your Email" required>
       <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
+      <button class="submit" type="submit">Send Message</button>
     </form>
   </section>
+
+  <!-- Registration Modal -->
+  <div id="signup-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('signup-modal')">&times;</span>
+      <h2>Sign Up</h2>
+      <form id="signup-form">
+        <label for="signup-username">Username:</label>
+        <input type="text" id="signup-username" name="username" required>
+        <label for="signup-email">Email:</label>
+        <input type="email" id="signup-email" name="email" required>
+        <label for="signup-password">Password:</label>
+        <input type="password" id="signup-password" name="password" required>
+        <button type="submit" class="modal-btn">Sign Up</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('login-modal')">&times;</span>
+      <h2>Login</h2>
+      <form id="login-form">
+        <label for="login-email">Email:</label>
+        <input type="email" id="login-email" name="email" required>
+        <label for="login-password">Password:</label>
+        <input type="password" id="login-password" name="password" required>
+        <button type="submit" class="modal-btn">Login</button>
+      </form>
+    </div>
+  </div>
 
   <footer>
     <p>&copy; 2025 CravingCourier. All Rights Reserved.</p>
   </footer>
+
+  <script>
+    // Open Modal
+    function openModal(modalId) {
+      document.getElementById(modalId).style.display = 'flex';
+    }
+
+    // Close Modal
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = 'none';
+    }
+
+    // Handle Sign Up Form Submission
+    document.getElementById('signup-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('signup-username').value;
+      const email = document.getElementById('signup-email').value;
+      const password = document.getElementById('signup-password').value;
+
+      try {
+        const response = await fetch('http://localhost:5000/api/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, email, password }),
+        });
+
+        const result = await response.json();
+        if (response.ok) {
+          alert('Registration successful!');
+          closeModal('signup-modal');
+        } else {
+          alert(result.message || 'Registration failed');
+        }
+      } catch (error) {
+        alert('An error occurred. Please try again later.');
+      }
+    });
+
+    // Handle Login Form Submission
+    document.getElementById('login-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+
+      try {
+        const response = await fetch('http://localhost:5000/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password }),
+        });
+
+        const result = await response.json();
+        if (response.ok) {
+          alert('Login successful!');
+          closeModal('login-modal');
+        } else {
+          alert(result.message || 'Login failed');
+        }
+      } catch (error) {
+        alert('An error occurred. Please try again later.');
+      }
+    });
+
+    // Slideshow functionality
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlides() {
+      slides.forEach((slide, index) => {
+        slide.style.display = 'none';
+      });
+
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+
+      slides[slideIndex - 1].style.display = 'block';
+      setTimeout(showSlides, 3000); // Change slide every 3 seconds
+    }
+
+    showSlides();
+  </script>
 </body>
-<script src="./scripts/index.js"></script>
-<script src="./scripts/menu.js"></script>
 </html>
